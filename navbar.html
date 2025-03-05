@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Navbar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header class="header">
+      <nav class="nav container">
+        <div class="nav_data">
+          <a href="#" class="nav_logo">LOGO</a>
+          <div class="nav_toggle" id="nav_toggle">
+            <i class="fa-solid fa-bars-staggered nav_burger"></i>
+            <i class="fa-solid fa-xmark nav_close"></i>
+        </div>
+      </div>
+
+      <div class="nav_menu" id="nav_menu">
+          <ul class="nav_list">
+            <li><a href="#" class="nav_link">Home</a></li>
+            <li><a href="#" class="nav_link">About</a></li>
+
+            <li class="dropdown_item">
+              <div class="nav_link">
+                  Services <i class="fa-solid fa-arrow-down dropdown_arrow"></i>
+              </div>
+              <ul class="dropdown_menu">
+                <li><a href="#" class="dropdown_link">Service 1</a></li>
+                <li><a href="#" class="dropdown_link">Service 2</a></li>
+                <li><a href="#" class="dropdown_link">Service 3</a></li>
+                <li class="dropdown_subitem">
+                  <div class="dropdown_link">
+                    Sub Services <i class="fa-solid fa-plus"></i>
+                  </div>
+                  <ul class="dropdown_submenu">
+                    <li><a href="#" class="dropdown_sublink">Sub Service 1</a></li>
+                    <li><a href="#" class="dropdown_sublink">Sub Service 2</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown_item">
+              <div class="nav_link">
+                  Another <i class="fa-solid fa-arrow-down dropdown_arrow"></i>
+              </div>
+              <ul class="dropdown_menu">
+                <li><a href="#" class="dropdown_link">Another 1</a></li>
+                <li><a href="#" class="dropdown_link">Another 2</a></li>
+              </ul>
+            </li>
+            <li><a href="#" class="nav_link">Contact Us</a></li>
+          </ul>
+      </div>
+      </nav>
+  </header>
+
+</body>
+</html>
+<script src="script.js"></script>

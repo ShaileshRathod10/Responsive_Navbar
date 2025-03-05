@@ -1,0 +1,248 @@
+body{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul{
+	list-style: none;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+
+.container{
+	max-width: 1120px;
+	margin-inline: 1.5rem;
+}
+.header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	background: #000;
+	box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+	z-index: 99;
+}
+.nav{
+	height: 70px;
+}
+.nav_logo,
+.nav_burger,
+.nav_close{
+	color: #fff;
+}
+.nav_data{
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.nav_logo{
+	display: inline-flex;
+	align-items: center;
+	column-gap: .25rem;
+	font-weight: 500;
+}
+.nav_toggle{
+	position: relative;
+	width: 32px;
+	height: 32px;
+	background: #000;
+}
+.nav_burger,
+.nav_close{
+	position: absolute;
+	width: max-content;
+	height: max-content;
+	inset: 0;
+	margin: auto;
+	font-size: 1.25rem;
+	cursor: pointer;
+	transition: opacity .1s, transform .4s;
+}
+.nav_close{
+	opacity: 0;
+}
+.nav_list{
+	padding: 0;
+}
+
+
+@media screen and (max-width : 800px){
+	.nav_menu{
+		position: absolute;
+		left: 0;
+		top: 3rem;
+		width: 100%;
+/*		background: gray;*/
+/*		height: calc(100vh - 3.5rem);*/
+		overflow: hidden;
+		pointer-events: none;
+		opacity: 0;
+		transition: top 0.4s, opacity 0.3s;
+	}
+	.nav_menu::-webkit-scrollbar{
+		width: 0;
+	}
+	.nav_list{
+		background: #000;
+		padding-top: 1rem;
+		margin: 0;
+	}
+}
+
+.nav_link{
+	color: #fff;
+	background: #111;
+	padding: 1.25rem 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.nav_link i{
+	color: #fff;
+}
+
+.nav_link:hover{
+	background: #000;
+}
+
+
+.show-menu{
+	opacity: 1;
+	top: 4rem;
+	pointer-events: initial;
+}
+.show-icon .nav_close{
+	opacity: 1;
+	transform: rotate(90deg);
+}
+.show-icon .nav_burger{
+	opacity: 0;
+	transform: rotate(90deg);
+}
+
+
+.dropdown_item{
+	cursor: pointer;
+}
+.dropdown_arrow{
+	font-size: 1.25rem;
+	transition: transform .4s;
+}
+.dropdown_link,
+.dropdown_sublink{
+	padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+	color: #fff;
+	background: #141414;
+	display: flex;
+	align-items: center;
+	column-gap: 0.5rem;
+	font-weight: 450;
+	transition: background 0.3s;
+}
+.dropdown_link:hover,
+.dropdown_sublink:hover{
+	background: #000;	
+}
+.dropdown_menu,
+.dropdown_submenu{
+	max-height: 0px;
+	overflow: hidden;
+	transition: max-height .4s ease-out;
+}
+.showSubMenu{
+	max-height: 1000px !important;
+	transition: max-height .4s ease-in;
+}
+
+.dropdown_item:hover .dropdown_menu,
+.dropdown_subitem:hover > .dropdown_submenu{
+	max-height: 1000px !important;
+	transition: max-height .4s ease-in;
+}
+
+.fa-plus{
+	margin-left: auto;
+}
+.dropdown_sublink{
+	background: #141414;
+}
+
+/*for computer */
+@media screen and (min-width : 1120px){
+	.container{
+		margin-inline: auto;
+	}
+	.nav{
+		height: 100px;
+		display: flex;
+		justify-content: space-between;
+	}
+	.nav_toggle{
+		display: none;
+	}
+	.nav_list{
+		display: flex;
+		height: 100%;
+		column-gap: 3rem;
+		margin: 0;
+	}
+	.nav_link{
+		height: 100%;
+		padding: 0 30px 0 0;
+		background: #000;
+		justify-content: initial;
+		column-gap: 0.25rem;
+	}
+	.nav_link:hover{
+		background: transparent;
+	}
+	.dropdown_item,
+	.dropdown_subitem{
+		position: relative;
+		width: max-content;
+	}
+	.dropdown_menu,
+	.dropdown_submenu{
+		max-height: initial;
+		overflow: initial;
+		position: absolute;
+		width: fit-content;
+		left: 0;
+		top: 6.5rem;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity .3s, top .3s;
+	}
+	.dropdown_link,
+	.dropdown_sublink{
+/*		padding-inline: 1rem 3.5rem;*/
+		padding-inline: 1rem;
+	}
+	.dropdown_subitem .dropdown_link{
+		padding-inline: 1rem;
+	}
+	.dropdown_submenu{
+		position: absolute;
+		left: 100%;
+		top: 0.5rem;
+		width: fit-content;
+	}
+	.dropdown_item:hover .dropdown_menu{
+		top: 6rem;
+		opacity: 1;
+		pointer-events: initial;
+		transition:top .3s;
+	}
+	.dropdown_subitem:hover .dropdown_submenu{
+		top: 0;
+		opacity: 1;
+		pointer-events: initial;
+		transition:top .3s;
+		width: fit-content;
+	}
+}
